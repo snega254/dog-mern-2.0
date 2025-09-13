@@ -34,6 +34,7 @@ header .logout-btn {
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.3s;
+  cursor: pointer;
 }
 
 header .logout-btn:hover {
@@ -58,6 +59,11 @@ header .logout-btn:hover {
 .btn:hover {
   background: #ff3b2e;
   transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+  background-color: #e55343;
 }
 
 /* --- Login/Registration Forms --- */
@@ -89,11 +95,14 @@ header .logout-btn:hover {
   border-radius: 8px;
   border: 1px solid #ccc;
   outline: none;
-  transition: border 0.3s;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
 .login-form input:focus {
   border-color: #ff6f61;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.6);
+  outline: 3px solid #ff6f61;
+  outline-offset: 2px;
 }
 
 .login-form button {
@@ -110,6 +119,16 @@ header .logout-btn:hover {
 .login-form button:hover {
   background: #ff3b2e;
   transform: scale(1.05);
+}
+
+.login-form button:active {
+  transform: scale(0.95);
+  background-color: #e55343;
+}
+
+.login-form button:focus {
+  outline: 3px solid #ff6f61;
+  outline-offset: 2px;
 }
 
 .login-form p {
@@ -172,11 +191,15 @@ header .logout-btn:hover {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .card button:hover, .dog-card button:hover, .order-card button:hover {
   transform: scale(1.05);
+}
+
+.card button:active, .dog-card button:active, .order-card button:active {
+  transform: scale(0.95);
 }
 
 /* --- Coming Soon Cards --- */
@@ -188,28 +211,43 @@ header .logout-btn:hover {
 .confirm-btn {
   background: #4CAF50;
   color: #fff;
+  cursor: pointer;
 }
 
 .confirm-btn:hover {
   background: #45a049;
 }
 
+.confirm-btn:active {
+  transform: scale(0.95);
+}
+
 .cancel-btn {
   background: #f44336;
   color: #fff;
+  cursor: pointer;
 }
 
 .cancel-btn:hover {
   background: #da190b;
 }
 
+.cancel-btn:active {
+  transform: scale(0.95);
+}
+
 .sold-btn {
   background: #FF9800;
   color: #fff;
+  cursor: pointer;
 }
 
 .sold-btn:hover {
   background: #f57c00;
+}
+
+.sold-btn:active {
+  transform: scale(0.95);
 }
 
 .order-status {
@@ -245,11 +283,14 @@ header .logout-btn:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .adoption-page .filters input:focus {
   border-color: #ff6f61;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.6);
+  outline: 3px solid #ff6f61;
+  outline-offset: 2px;
 }
 
 /* --- Sell Dog Form --- */
@@ -278,11 +319,14 @@ header .logout-btn:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .sell-dog-form select:focus, .sell-dog-form input[type="file"]:focus {
   border-color: #ff6f61;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.6);
+  outline: 3px solid #ff6f61;
+  outline-offset: 2px;
 }
 
 .sell-dog-form button {
@@ -290,10 +334,15 @@ header .logout-btn:hover {
   color: #fff;
   padding: 10px 20px;
   transition: background 0.3s;
+  cursor: pointer;
 }
 
 .sell-dog-form button:hover {
   background: #45a049;
+}
+
+.sell-dog-form button:active {
+  transform: scale(0.95);
 }
 
 /* --- Dog ID Row --- */
@@ -338,6 +387,7 @@ header .logout-btn:hover {
   margin-bottom: 15px;
 }
 
+/* Modal buttons with hover and focus */
 .modal-content button {
   margin: 0 5px;
   padding: 8px 15px;
@@ -345,7 +395,21 @@ header .logout-btn:hover {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+.modal-content button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.modal-content button:focus {
+  outline: 3px solid #ff6f61;
+  outline-offset: 2px;
+}
+
+.modal-content button:active {
+  transform: scale(0.95);
 }
 
 .modal-content .modal-yes {
@@ -358,6 +422,30 @@ header .logout-btn:hover {
   color: #fff;
 }
 
-.modal-content button:hover {
-  opacity: 0.9;
+/* --- Links with animated underline --- */
+a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff6f61;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* --- Cursors for clickable items --- */
+.card button, .dog-card button, .order-card button, .logout-btn {
+  cursor: pointer;
 }
